@@ -2514,7 +2514,7 @@ impl Actor {
             for (deadline_idx, partition_sectors) in to_process.iter() {
                 // If the deadline is the current or next deadline to prove, don't allow terminating sectors.
                 // We assume that deadlines are immutable when being proven.
-                if !deadline_is_mutable(
+                /*if !deadline_is_mutable(
                     rt.policy(),
                     state.current_proving_period_start(rt.policy(), curr_epoch),
                     deadline_idx,
@@ -2525,7 +2525,9 @@ impl Actor {
                         "cannot terminate sectors in immutable deadline {}",
                         deadline_idx
                     ));
-                }
+                }*/
+
+                log::debug!("skip deadline_is_mutable check");
 
                 let quant = state.quant_spec_for_deadline(rt.policy(), deadline_idx);
                 let mut deadline =

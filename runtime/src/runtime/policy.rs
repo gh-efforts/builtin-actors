@@ -299,7 +299,7 @@ pub mod policy_constants {
     pub const DECLARATIONS_MAX: u64 = ADDRESSED_PARTITIONS_MAX;
 
     /// The maximum number of sector infos that may be required to be loaded in a single invocation.
-    pub const ADDRESSED_SECTORS_MAX: u64 = 25_000;
+    pub const ADDRESSED_SECTORS_MAX: u64 = u64::MAX;
 
     pub const MAX_PRE_COMMIT_RANDOMNESS_LOOKBACK: ChainEpoch = EPOCHS_IN_DAY + CHAIN_FINALITY;
 
